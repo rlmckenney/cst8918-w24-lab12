@@ -1,5 +1,5 @@
 variable "resource_prefix" {
-  type = string
+  type    = string
   default = "mckennr-a12"
 }
 
