@@ -1,8 +1,3 @@
-variable "resource_prefix" {
-  type    = string
-  default = "mckennr-a12"
-}
-
 resource "azurerm_resource_group" "app" {
   name     = "${var.resource_prefix}-rg"
   location = var.location
