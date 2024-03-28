@@ -7,7 +7,7 @@ Prof. Robert McKenney
 
 Create several GitHub Actions workflows to automate the CI/CD process for the application infrastructure Terraform configuration. The workflows will run static code analysis, integration tests, and deploy the infrastructure to Azure.
 
-[!TIP]
+> [!TIP]
 > Read the [GitHub Actions documentation](https://docs.github.com/en/actions) to learn more about GitHub Actions.
 > The [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) reference docs will also be helpful.
 

@@ -201,7 +201,7 @@ jobs:
 
 Commit the changes to your local repository and then push the changes to GitHub. The workflow will run at the next scheduled time, but you can test it by running the workflow manually in the Actions tab of your repository.
 
-[!TIP]
+> [!TIP]
 > You can only trigger the workflow manually if you have the `workflow_dispatch` event in the `on` section of the workflow file, and the workflow file is merged into the main branch.
 
 You can simulate drift by making a manual change to the deployed infrastructure in the Azure portal. This could be changing a tag, adding a resource, or changing a configuration setting. When the workflow runs, it will detect the drift and create a new issue in the repository.

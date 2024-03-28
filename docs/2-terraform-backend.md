@@ -9,7 +9,7 @@ As you will be using GitHub Actions to run Terraform, you will need to store the
 
 In last week's lab, you created the storage account and container manually using AZ CLI. This week, you will create them using a separate Terraform module. All of the Terraform configuration for the storage account and container should be created in the `infra/tf-backend` folder. This will keep the Terraform configuration for the storage account and container separate from the configuration for the AKS cluster.
 
-[!WARNING]
+> [!WARNING]
 > The `tf-backend` and `tf-app` folders are separate Terraform configurations. Commands like `terraform init`, `terraform plan`, and `terraform apply` should be run in each folder separately.
 
 The reason for separating the two configurations is because the storage account and container are used to store the Terraform state file for the app infrastructure configuration. If the backend infrastructure and app infrastructure are in the same configuration, you will run into a chicken-and-egg problem where the Terraform state file is stored in the storage account that is being created by Terraform.
@@ -25,7 +25,7 @@ This will be a simple configuration with only the necessary resources to store t
 - the storage account should require a minimum version of `TLS1_2`
 - a container in the storage account called `tfstate` - make sure it is private
 
-[!TIP]
+> [!TIP]
 > Remember that the storage account name must be unique across all of Azure, and must be between 3 and 24 characters in length. Only use lowercase letters and numbers.
 
 The output of the configuration should be the _resource group name_, _storage account name_, the _container name_ and the _primary access key_ (which will be added to the GitHub secrets). These will be the values that you need to use in the app infrastructure configuration's `backend` block.
@@ -61,7 +61,7 @@ So that we can test the Terraform configuration, add a resource group in the `ma
 
 Remember, one of the best practice strategies from software development is to develop in small increments and test often. Run the following commands to validate and deploy the Terraform configuration.
 
-[!TIP]
+> [!TIP]
 > Before you can test the Terraform configuration, you will need to set the `ARM_ACCESS_KEY` environment variable to the primary access key of the storage account. You can get this from the output of the Terraform configuration. You can set the environment variable with the following command:
 
 ```bash

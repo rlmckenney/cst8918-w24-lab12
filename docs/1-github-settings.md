@@ -7,7 +7,7 @@ Prof. Robert McKenney
 
 One lab partner, create a new repository on GitHub called `cst8918-w24-lab12`. Initialize the repository with a README file and a `.gitignore` file for Terraform.
 
-[!TIP] 
+> [!TIP] 
 > Copy the .gitignore file from an earlier assignment.
 
 ### Add a Collaborator
@@ -26,14 +26,14 @@ To protect the `main` branch, create a branch protection rule-set that:
 
 Later you should add more rules to this set, but for now, these are the minimum requirements.
 
-[!TIP] 
+> [!TIP] 
 > See these [instructions from the GitHub Docs](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches).
 
 ### GitHub Environment
 
 The GitHub Actions workflows that you will create utilize GitHub Environments and Secrets to store the azure identity information and setup an approval process for deployments. In the `Settings > Environments` tab of your repository, create an environment named `production`.
 
-[!TIP] 
+> [!TIP] 
 > See these [instructions from the GitHub Docs](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment#creating-an-environment).
 
 #### Deployment Protection Rules
@@ -42,6 +42,6 @@ On a bigger team, you may want to require approval before deploying to productio
 
 For this lab, set the `production` environment to only deploy from the `main` branch and require approval before deploying. Set both team members as the only people who can approve the deployment and check the box to `Prevent self-review`.
 
-[!TIP] 
+> [!TIP] 
 > See these [instructions from the GitHub Docs](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#environment-protection-rules).
 
