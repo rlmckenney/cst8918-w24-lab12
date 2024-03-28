@@ -7,6 +7,11 @@ defaults:
   run:
     working-directory: ./infra/tf-app
 
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
 jobs:
   terraform-static-tests:
     name: 'Terraform Static Tests'
