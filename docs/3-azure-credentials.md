@@ -37,7 +37,7 @@ You will create two Azure AD applications and service principals. One will have 
 
 **These commands will all be run in the Azure CLI.**
 
-[!TIP]
+> [!TIP]
 > See the full documentation at [learn.microsoft.com](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app)
 
 #### For the `contributor` role
@@ -77,7 +77,7 @@ az role assignment create \
   --scope /subscriptions/$subscriptionId/resourceGroups/$resourceGroupName
 ```
 
-[!TIP]
+> [!TIP]
 > The scope of the role assignment should be the resource group that you created in the Terraform configuration.
 > You _could_ assign the role to a broader scope like the subscription, but it is a best practice to scope the role assignment to the smallest scope necessary.
 
@@ -118,7 +118,7 @@ az role assignment create \
   --scope /subscriptions/$subscriptionId/resourceGroups/$resourceGroupName
 ```
 
-[!WARNING]
+> [!WARNING]
 > Do we need to assign a service principal role for the storage account?
 
 ### Create three Federated Credentials
@@ -127,7 +127,7 @@ az role assignment create \
 
 The `az ad app federated-credential create` command will create a new federated credential for the Azure AD application specified by the `--id` argument. The `--parameters` argument specifies the path to a JSON file that contains the configuration parameters for the new federated credential.
 
-[!TIP]
+> [!TIP]
 > See the full documentation at [learn.microsoft.com](https://docs.microsoft.com/en-us/cli/azure/ad/app/federated-credential?view=azure-cli-latest)
 
 Create a new file at the path `infra/az-federated-credential-params/production-deploy.json` with the following contents. Replace `<your-github-username>` and `<repo-name>` with your GitHub username and the name of your repository.
