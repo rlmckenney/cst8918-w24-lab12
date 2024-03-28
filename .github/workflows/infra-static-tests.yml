@@ -27,6 +27,7 @@ jobs:
       uses: hashicorp/setup-terraform@v3
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+    # The -backend=false flag is used to prevent Terraform from using the remote backend, which is not needed for static tests.
     - name: Terraform Init
       run: terraform init -backend=false
 
@@ -35,24 +36,10 @@ jobs:
       run: terraform validate
 
     # Checks that all Terraform configuration files adhere to a canonical format
+    # Note: This will not modify files, but will exit with a non-zero status if any files need formatting
     - name: Terraform Format
       run: terraform fmt -check -recursive
     
-    # Perform a security scan of the terraform code using checkov
-    # - name: Run Checkov action
-    #   id: checkov
-    #   uses: bridgecrewio/checkov-action@master
-    #   with: 
-    #     framework: terraform
-
-    # # Upload results to GitHub Advanced Security
-    # - name: Upload SARIF file
-    #   if: success() || failure()
-    #   uses: github/codeql-action/upload-sarif@v2
-    #   with:
-    #     sarif_file: results.sarif
-    #     category: checkov
-
     # Perform a security scan of the terraform code tfsec
     - name: tfsec
       uses: tfsec/tfsec-sarif-action@master
