@@ -1,7 +1,6 @@
 variable "resource_prefix" {
   type = string
-  default = "${var.college_id}-${var.assignment_number}"
-  description = "unique prefix for all resources"
+  default = "mckennr-a12"
 }
 
 resource "azurerm_resource_group" "app" {
