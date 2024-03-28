@@ -21,7 +21,7 @@ You will create several GitHub Actions CI/CD workflows for automating:
 
 A separate Terraform "backend" configuration will create the storage account and container to store your Terraform state file for the application infrastructure.
 
-## Project folder structure
+### Project folder structure
 
 When you are done, your project folder structure should look like this:
 
@@ -54,6 +54,12 @@ cst8918-w24-lab12
 ```
 
 ## Instructions
+
+This lab should be completed in teams of two. One team member will create the GitHub repository and invite the other as a collaborator. Most of the numbered steps should be completed by one team member committing and pushing the code on a dev branch, with the other team member reviewing and approving the pull request.
+
+> [!IMPORTANT] 
+> Submissions with only one team member's contributions will incur 20% grade penalty.
+
 Full instructions for each step are in the [docs](docs) folder. Please complete them in order.
 
 1. Setup your GitHub repo with an environment and branch protection rules.
@@ -61,19 +67,19 @@ Full instructions for each step are in the [docs](docs) folder. Please complete 
 3. Create Azure access credentials for automation with GitHub Actions.
 4. Add Azure identity values as _secrets_ in your GitHub repo.
 5. Update the Terraform configuration to use the Azure identity values.
-6. Create a GitHub Actions workflows to:  
-  6.1  run Terraform static analysis.  
-  6.2  run Terraform integration tests.  
-  6.3  deploy the Terraform infrastructure.  
-  6.4  detect drift between Terraform and Azure.  
+6. Create a GitHub Actions workflows to:
+   6.1 run Terraform static analysis.
+   6.2 run Terraform integration tests.
+   6.3 deploy the Terraform infrastructure.
+   6.4 detect drift between Terraform and Azure.
 7. Test the workflows by making changes to the Terraform configuration.
 
 ## Submission
+
 1. Submit the URL of your GitHub repository.
 2. Include in your submission a screenshot of the Pull Request showing the successful completion of the workflows - expand the "All checks have passed" section to show the steps.
 3. Include in your submission a screenshot of the Pull Request showing the expanded results of the Terraform Plan step.
 4. Embed the screenshots in your README.md file.
-
 
 ## Additional References
 
