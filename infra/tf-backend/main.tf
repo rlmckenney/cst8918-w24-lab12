@@ -20,6 +20,20 @@ resource "azurerm_resource_group" "githubactions_rg" {
   location = "westus3" # Change to your preferred location
 }
 
+resource "azurerm_virtual_network" "githubactions_vnet" {
+  name = "barb0238-githubactions-vnet"
+  resource_group_name = azurerm_resource_group.githubactions_rg.name
+  location = "westus3"
+  address_space = ["10.0.0.0/16"]
+}
+resource "azurerm_subnet" "githubactions_subnet" {
+  name = "barb0238-githubactions-subnet"
+  resource_group_name = azurerm_resource_group.githubactions_rg.name
+  virtual_network_name = azurerm_virtual_network.githubactions_vnet.name
+  address_prefixes = ["10.0.1.0/24"]
+}
+
+
 
 # Create a Storage Account
 resource "azurerm_storage_account" "githubactions" {
