@@ -1,4 +1,4 @@
-CST8918 - DevOps: Infrastructure as Code  
+CST8918 - DevOps: Infrastructure as Code
 Prof. Robert McKenney
 
 # Lab 12: Terraform CI/CD on Azure with GitHub Actions
